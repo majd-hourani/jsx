@@ -1,16 +1,94 @@
-# React + Vite
+# Majd Alhourani – Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A personal portfolio website built with React and Vite. It introduces the developer, lists skills and projects, and includes a contact form. The page greets visitors based on the time of day.
 
-Currently, two official plugins are available:
+![Project preview](project.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- Time-based greeting (Good Morning / Afternoon / Evening)
+- Fixed sidebar navigation with smooth scrolling to each section
+- Sections: Home, About, Skills, Projects, Contact
+- Contact form with name, email and message fields
+- Responsive layout (the sidebar becomes a top bar on small screens)
+- Stone color palette with simple, readable CSS
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the ESLint configuration
+- [React](https://react.dev/) 19
+- [Vite](https://vite.dev/) 8
+- ESLint (with React Hooks and React Refresh plugins)
+- Plain CSS
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (a recent LTS version)
+- npm
+
+### Installation
+
+Clone the repository and install the dependencies:
+
+```bash
+git clone https://github.com/majd-hourani/jsx.git
+cd jsx
+npm install
+```
+
+### Run in development
+
+```bash
+npm run dev
+```
+
+Then open the local URL printed in the terminal (usually `http://localhost:5173`).
+
+### Other scripts
+
+| Command           | Description                          |
+| ----------------- | ------------------------------------ |
+| `npm run dev`     | Start the development server         |
+| `npm run build`   | Create a production build in `dist/` |
+| `npm run preview` | Preview the production build locally |
+| `npm run lint`    | Run ESLint on the project            |
+
+## Project Structure
+
+```
+.
+├── index.html
+├── package.json
+├── project.png       # Screenshot used in this README
+└── src/
+    ├── main.jsx      # App entry point
+    ├── main.css      # Global/page styles
+    └── App.jsx       # Portfolio component
+```
+
+> The stylesheet is loaded in `main.jsx` as `./main.css`. If your styles live in `App.css`, rename it to `main.css` or change the import.
+
+## Customization
+
+All personal content is defined at the top of `App.jsx`:
+
+- `firstName`, `lastName`, `jobTitle`
+- `introduction` and `aboutMe`
+- `skills` (array of strings)
+- `projects` (array of `{ name, description }`)
+
+Colors are defined as CSS variables in the `:root` block of the stylesheet, so you can change the whole theme from one place.
+
+## Notes
+
+- The contact form is front-end only and does not send messages yet. Connect it to a backend or a form service to make it work.
+- The message field currently has `maxLength={50}`; increase it if you want longer messages.
+
+## Author
+
+**Majd Alhourani** – Junior Web Developer
+
+## License
+
+This project is for personal use.
