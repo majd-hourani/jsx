@@ -106,7 +106,35 @@ function App() {
         <section id="contact">
           <h2>Contact Me</h2>
           <p>I'm open to new opportunities and collaborations.</p>
-          <a href={`mailto:${email}`}>Send Me an Email</a>
+
+          <form>
+            <div>
+              <label htmlFor="name">Your Name</label>
+              <input
+                type="text"
+                id="name"
+                placeholder="Enter your name"
+                autoFocus
+              />
+            </div>
+
+            <div>
+              <label htmlFor="email">Your Email</label>
+              <input type="email" id="email" placeholder="Enter your email" />
+            </div>
+
+            <div>
+              <label htmlFor="message">Your Message</label>
+              <textarea
+                id="message"
+                placeholder="Write your message..."
+                rows="5"
+                maxLength={50}
+              />
+            </div>
+
+            <button type="submit">Send Message</button>
+          </form>
         </section>
       </main>
 
