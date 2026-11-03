@@ -1,6 +1,8 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 
+import "./main.css";
+
 function App() {
   const firstName = "Majd";
   const lastName = "Alhourani";
@@ -42,106 +44,145 @@ function App() {
   }
 
   return (
-    <div>
-      <header>
-        <h1>
-          {firstName} {lastName}
-        </h1>
-        <p>{jobTitle.toUpperCase()}</p>
+    <div className="portfolio">
+      <header className="header">
+        <div className="container">
+          <div className="header-content">
+            <div className="logo">
+              <h1>
+                {firstName} {lastName}
+              </h1>
+              <p>{jobTitle.toUpperCase()}</p>
+            </div>
 
-        <nav>
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
-        </nav>
+            <nav className="navigation">
+              <a href="#home">Home</a>
+              <a href="#about">About</a>
+              <a href="#skills">Skills</a>
+              <a href="#projects">Projects</a>
+              <a href="#contact">Contact</a>
+            </nav>
+          </div>
+        </div>
       </header>
 
       <main>
-        <section id="home">
-          <h2>
-            {greeting}, I'm {firstName}!
-          </h2>
-          <p>{introduction}</p>
-          <a href="#projects">View My Projects</a>
-        </section>
+        <section id="home" className="hero">
+          <div className="container">
+            <div className="hero-content">
+              <h2>
+                {greeting}, I'm {firstName}!
+              </h2>
 
-        <section id="about">
-          <h2>About Me</h2>
-          <p>{aboutMe}</p>
-        </section>
+              <p className="hero-description">{introduction}</p>
 
-        <section id="skills">
-          <h2>My Skills</h2>
-          <ul>
-            <li>{skills[0]}</li>
-            <li>{skills[1]}</li>
-            <li>{skills[2]}</li>
-            <li>{skills[3]}</li>
-            <li>{skills[4]}</li>
-            <li>{skills[5]}</li>
-          </ul>
-        </section>
-
-        <section id="projects">
-          <h2>My Projects</h2>
-
-          <article>
-            <h3>{projects[0].name}</h3>
-            <p>{projects[0].description}</p>
-          </article>
-
-          <article>
-            <h3>{projects[1].name}</h3>
-            <p>{projects[1].description}</p>
-          </article>
-
-          <article>
-            <h3>{projects[2].name}</h3>
-            <p>{projects[2].description}</p>
-          </article>
-        </section>
-
-        <section id="contact">
-          <h2>Contact Me</h2>
-          <p>I'm open to new opportunities and collaborations.</p>
-
-          <form>
-            <div>
-              <label htmlFor="name">Your Name</label>
-              <input
-                type="text"
-                id="name"
-                placeholder="Enter your name"
-                autoFocus
-              />
+              <a className="button" href="#projects">
+                View My Projects
+              </a>
             </div>
+          </div>
+        </section>
 
-            <div>
-              <label htmlFor="email">Your Email</label>
-              <input type="email" id="email" placeholder="Enter your email" />
+        <section id="about" className="about section">
+          <div className="container">
+            <h2 className="section-title">About Me</h2>
+            <p className="about-description">{aboutMe}</p>
+          </div>
+        </section>
+
+        <section id="skills" className="skills section">
+          <div className="container">
+            <h2 className="section-title">My Skills</h2>
+
+            <ul className="skills-list">
+              <li className="skill-item">{skills[0]}</li>
+              <li className="skill-item">{skills[1]}</li>
+              <li className="skill-item">{skills[2]}</li>
+              <li className="skill-item">{skills[3]}</li>
+              <li className="skill-item">{skills[4]}</li>
+              <li className="skill-item">{skills[5]}</li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="projects" className="projects section">
+          <div className="container">
+            <h2 className="section-title">My Projects</h2>
+
+            <div className="projects-list">
+              <article className="project-card">
+                <h3>{projects[0].name}</h3>
+                <p>{projects[0].description}</p>
+              </article>
+
+              <article className="project-card">
+                <h3>{projects[1].name}</h3>
+                <p>{projects[1].description}</p>
+              </article>
+
+              <article className="project-card">
+                <h3>{projects[2].name}</h3>
+                <p>{projects[2].description}</p>
+              </article>
             </div>
+          </div>
+        </section>
 
-            <div>
-              <label htmlFor="message">Your Message</label>
-              <textarea
-                id="message"
-                placeholder="Write your message..."
-                rows="5"
-                maxLength={50}
-              />
-            </div>
+        <section id="contact" className="contact section">
+          <div className="container">
+            <h2 className="section-title">Contact Me</h2>
 
-            <button type="submit">Send Message</button>
-          </form>
+            <p className="contact-description">
+              I'm open to new opportunities and collaborations.
+            </p>
+
+            <form className="contact-form">
+              <div className="form-group">
+                <label htmlFor="name">Your Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  className="form-input"
+                  placeholder="Enter your name"
+                  autoFocus
+                />
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="email">Your Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  className="form-input"
+                  placeholder="Enter your email"
+                />
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="message">Your Message</label>
+                <textarea
+                  id="message"
+                  className="form-input form-textarea"
+                  placeholder="Write your message..."
+                  rows="5"
+                  maxLength={50}
+                />
+              </div>
+
+              <button className="button submit-button" type="submit">
+                Send Message
+              </button>
+            </form>
+          </div>
         </section>
       </main>
 
-      <footer>
-        <p>
-          Copyright 2026 {firstName} {lastName}.
-        </p>
+      <footer className="footer">
+        <div className="container">
+          <p>
+            Copyright 2026 {firstName} {lastName}.
+          </p>
+        </div>
       </footer>
     </div>
   );
